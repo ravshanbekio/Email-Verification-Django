@@ -5,19 +5,19 @@ from django import forms
 class RegisterUserForm(UserCreationForm):
     class Meta:
         model = Account
-        fields = ('first_name','last_name','email','username','proffession', 'password1', 'password2')
+        fields = ('first_name','last_name','username','email','proffession', 'password1', 'password2')
         labels = {
             'first_name': '',
             'last_name': '',
-            'email':'',
-            'username': '',
+            'username':'',
+            'email': '',
             'proffession': '',
         }
         widgets = {
             'first_name': forms.TextInput(attrs={'class':'form-control','name':'first_name','placeholder':'First name'}),
             'last_name': forms.TextInput(attrs={'class':'form-control','name':'last_name','placeholder':'Last name'}),
-            'email': forms.EmailInput(attrs={'class':'form-control','name':'email','placeholder':'Email address'}),
             'username': forms.TextInput(attrs={'class':'form-control','name':'username','placeholder':'Username'}),
+            'email': forms.EmailInput(attrs={'class':'form-control','name':'email','placeholder':'Email Address'}),
             'proffession': forms.Select(attrs={'class':'form-control','name':'proffession','placeholder':'Proffession'})
         }
 
